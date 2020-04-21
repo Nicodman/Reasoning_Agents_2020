@@ -1,6 +1,6 @@
 # Reasoning_Agents_2020
 
-Restraining Bolts: Reinforcement Learning with LTLf/LDLf Restraining Specifications
+Restraining Bolts: Reinforcement Learning with LTLf/LDLf Restraining Specifications <br/>
 Giuseppe De Giacomo, Marco Favorito, Luca Iocchi, Fabio Patrizi. ICAPS 2019.
 
 Students involved: <br/><br/>
