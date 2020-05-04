@@ -5,8 +5,10 @@ Università La Sapienza Roma
 <a href="https://www.dis.uniroma1.it/"><img src="http://www.dis.uniroma1.it/sites/default/files/marchio%20logo%20eng%20jpg.jpg" width="500"></a>
 
 ## Approach
-Work in progress \\
-ENV: chessboard
+Work in progress ----->
+ENV: chessboard ------>
+RL: learn new moves ----->
+RB: ???
 
 
 ## Team
