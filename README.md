@@ -19,3 +19,7 @@ Work in progress
 ## Documentation
 You can read our final technical documentation about this project here (report todo)
 
+
+
+## Training
+$ python train.py chess 
