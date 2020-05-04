@@ -1,0 +1,1397 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> temp_formula
+Rule 1     temp_formula -> temp_formula EQUIVALENCE temp_formula
+Rule 2     temp_formula -> temp_formula IMPLIES temp_formula
+Rule 3     temp_formula -> temp_formula OR temp_formula
+Rule 4     temp_formula -> temp_formula AND temp_formula
+Rule 5     temp_formula -> BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+Rule 6     temp_formula -> DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+Rule 7     temp_formula -> NOT temp_formula
+Rule 8     temp_formula -> TT
+Rule 9     temp_formula -> FF
+Rule 10    temp_formula -> END
+Rule 11    temp_formula -> LAST
+Rule 12    path -> path UNION path
+Rule 13    path -> path SEQ path
+Rule 14    path -> path STAR
+Rule 15    path -> temp_formula TEST
+Rule 16    path -> propositional
+Rule 17    propositional -> propositional EQUIVALENCE propositional
+Rule 18    propositional -> propositional IMPLIES propositional
+Rule 19    propositional -> propositional OR propositional
+Rule 20    propositional -> propositional AND propositional
+Rule 21    propositional -> NOT propositional
+Rule 22    propositional -> FALSE
+Rule 23    propositional -> TRUE
+Rule 24    propositional -> ATOM
+Rule 25    temp_formula -> LPAREN temp_formula RPAREN
+Rule 26    path -> LPAREN path RPAREN
+Rule 27    propositional -> LPAREN propositional RPAREN
+
+Terminals, with rules where they appear
+
+AND                  : 4 20
+ATOM                 : 24
+BOXLSEPARATOR        : 5
+BOXRSEPARATOR        : 5
+DIAMONDLSEPARATOR    : 6
+DIAMONDRSEPARATOR    : 6
+END                  : 10
+EQUIVALENCE          : 1 17
+FALSE                : 22
+FF                   : 9
+IMPLIES              : 2 18
+LAST                 : 11
+LPAREN               : 25 26 27
+NOT                  : 7 21
+OR                   : 3 19
+RPAREN               : 25 26 27
+SEQ                  : 13
+STAR                 : 14
+TEST                 : 15
+TRUE                 : 23
+TT                   : 8
+UNION                : 12
+error                : 
+
+Nonterminals, with rules where they appear
+
+path                 : 5 6 12 12 13 13 14 26
+propositional        : 16 17 17 18 18 19 19 20 20 21 27
+temp_formula         : 1 1 2 2 3 3 4 4 5 6 7 15 25 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . temp_formula
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 4
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 9
+
+    temp_formula                   shift and go to state 1
+
+state 1
+
+    (0) S' -> temp_formula .
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    EQUIVALENCE     shift and go to state 10
+    IMPLIES         shift and go to state 11
+    OR              shift and go to state 12
+    AND             shift and go to state 13
+
+
+state 2
+
+    (5) temp_formula -> BOXLSEPARATOR . path BOXRSEPARATOR temp_formula
+    (12) path -> . path UNION path
+    (13) path -> . path SEQ path
+    (14) path -> . path STAR
+    (15) path -> . temp_formula TEST
+    (16) path -> . propositional
+    (26) path -> . LPAREN path RPAREN
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    LPAREN          shift and go to state 17
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 18
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+
+    path                           shift and go to state 14
+    temp_formula                   shift and go to state 15
+    propositional                  shift and go to state 16
+
+state 3
+
+    (6) temp_formula -> DIAMONDLSEPARATOR . path DIAMONDRSEPARATOR temp_formula
+    (12) path -> . path UNION path
+    (13) path -> . path SEQ path
+    (14) path -> . path STAR
+    (15) path -> . temp_formula TEST
+    (16) path -> . propositional
+    (26) path -> . LPAREN path RPAREN
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    LPAREN          shift and go to state 17
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 18
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+
+    path                           shift and go to state 22
+    temp_formula                   shift and go to state 15
+    propositional                  shift and go to state 16
+
+state 4
+
+    (7) temp_formula -> NOT . temp_formula
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 4
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 9
+
+    temp_formula                   shift and go to state 23
+
+state 5
+
+    (8) temp_formula -> TT .
+
+    EQUIVALENCE     reduce using rule 8 (temp_formula -> TT .)
+    IMPLIES         reduce using rule 8 (temp_formula -> TT .)
+    OR              reduce using rule 8 (temp_formula -> TT .)
+    AND             reduce using rule 8 (temp_formula -> TT .)
+    $end            reduce using rule 8 (temp_formula -> TT .)
+    TEST            reduce using rule 8 (temp_formula -> TT .)
+    RPAREN          reduce using rule 8 (temp_formula -> TT .)
+
+
+state 6
+
+    (9) temp_formula -> FF .
+
+    EQUIVALENCE     reduce using rule 9 (temp_formula -> FF .)
+    IMPLIES         reduce using rule 9 (temp_formula -> FF .)
+    OR              reduce using rule 9 (temp_formula -> FF .)
+    AND             reduce using rule 9 (temp_formula -> FF .)
+    $end            reduce using rule 9 (temp_formula -> FF .)
+    TEST            reduce using rule 9 (temp_formula -> FF .)
+    RPAREN          reduce using rule 9 (temp_formula -> FF .)
+
+
+state 7
+
+    (10) temp_formula -> END .
+
+    EQUIVALENCE     reduce using rule 10 (temp_formula -> END .)
+    IMPLIES         reduce using rule 10 (temp_formula -> END .)
+    OR              reduce using rule 10 (temp_formula -> END .)
+    AND             reduce using rule 10 (temp_formula -> END .)
+    $end            reduce using rule 10 (temp_formula -> END .)
+    TEST            reduce using rule 10 (temp_formula -> END .)
+    RPAREN          reduce using rule 10 (temp_formula -> END .)
+
+
+state 8
+
+    (11) temp_formula -> LAST .
+
+    EQUIVALENCE     reduce using rule 11 (temp_formula -> LAST .)
+    IMPLIES         reduce using rule 11 (temp_formula -> LAST .)
+    OR              reduce using rule 11 (temp_formula -> LAST .)
+    AND             reduce using rule 11 (temp_formula -> LAST .)
+    $end            reduce using rule 11 (temp_formula -> LAST .)
+    TEST            reduce using rule 11 (temp_formula -> LAST .)
+    RPAREN          reduce using rule 11 (temp_formula -> LAST .)
+
+
+state 9
+
+    (25) temp_formula -> LPAREN . temp_formula RPAREN
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 4
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 9
+
+    temp_formula                   shift and go to state 24
+
+state 10
+
+    (1) temp_formula -> temp_formula EQUIVALENCE . temp_formula
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 4
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 9
+
+    temp_formula                   shift and go to state 25
+
+state 11
+
+    (2) temp_formula -> temp_formula IMPLIES . temp_formula
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 4
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 9
+
+    temp_formula                   shift and go to state 26
+
+state 12
+
+    (3) temp_formula -> temp_formula OR . temp_formula
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 4
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 9
+
+    temp_formula                   shift and go to state 27
+
+state 13
+
+    (4) temp_formula -> temp_formula AND . temp_formula
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 4
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 9
+
+    temp_formula                   shift and go to state 28
+
+state 14
+
+    (5) temp_formula -> BOXLSEPARATOR path . BOXRSEPARATOR temp_formula
+    (12) path -> path . UNION path
+    (13) path -> path . SEQ path
+    (14) path -> path . STAR
+
+    BOXRSEPARATOR   shift and go to state 29
+    UNION           shift and go to state 30
+    SEQ             shift and go to state 31
+    STAR            shift and go to state 32
+
+
+state 15
+
+    (15) path -> temp_formula . TEST
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    TEST            shift and go to state 33
+    EQUIVALENCE     shift and go to state 10
+    IMPLIES         shift and go to state 11
+    OR              shift and go to state 12
+    AND             shift and go to state 13
+
+
+state 16
+
+    (16) path -> propositional .
+    (17) propositional -> propositional . EQUIVALENCE propositional
+    (18) propositional -> propositional . IMPLIES propositional
+    (19) propositional -> propositional . OR propositional
+    (20) propositional -> propositional . AND propositional
+
+    BOXRSEPARATOR   reduce using rule 16 (path -> propositional .)
+    UNION           reduce using rule 16 (path -> propositional .)
+    SEQ             reduce using rule 16 (path -> propositional .)
+    STAR            reduce using rule 16 (path -> propositional .)
+    DIAMONDRSEPARATOR reduce using rule 16 (path -> propositional .)
+    RPAREN          reduce using rule 16 (path -> propositional .)
+    EQUIVALENCE     shift and go to state 34
+    IMPLIES         shift and go to state 35
+    OR              shift and go to state 36
+    AND             shift and go to state 37
+
+
+state 17
+
+    (26) path -> LPAREN . path RPAREN
+    (25) temp_formula -> LPAREN . temp_formula RPAREN
+    (27) propositional -> LPAREN . propositional RPAREN
+    (12) path -> . path UNION path
+    (13) path -> . path SEQ path
+    (14) path -> . path STAR
+    (15) path -> . temp_formula TEST
+    (16) path -> . propositional
+    (26) path -> . LPAREN path RPAREN
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    LPAREN          shift and go to state 17
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 18
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+
+    path                           shift and go to state 38
+    temp_formula                   shift and go to state 39
+    propositional                  shift and go to state 40
+
+state 18
+
+    (7) temp_formula -> NOT . temp_formula
+    (21) propositional -> NOT . propositional
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 18
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 42
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+
+    temp_formula                   shift and go to state 23
+    propositional                  shift and go to state 41
+
+state 19
+
+    (22) propositional -> FALSE .
+
+    EQUIVALENCE     reduce using rule 22 (propositional -> FALSE .)
+    IMPLIES         reduce using rule 22 (propositional -> FALSE .)
+    OR              reduce using rule 22 (propositional -> FALSE .)
+    AND             reduce using rule 22 (propositional -> FALSE .)
+    BOXRSEPARATOR   reduce using rule 22 (propositional -> FALSE .)
+    UNION           reduce using rule 22 (propositional -> FALSE .)
+    SEQ             reduce using rule 22 (propositional -> FALSE .)
+    STAR            reduce using rule 22 (propositional -> FALSE .)
+    DIAMONDRSEPARATOR reduce using rule 22 (propositional -> FALSE .)
+    RPAREN          reduce using rule 22 (propositional -> FALSE .)
+
+
+state 20
+
+    (23) propositional -> TRUE .
+
+    EQUIVALENCE     reduce using rule 23 (propositional -> TRUE .)
+    IMPLIES         reduce using rule 23 (propositional -> TRUE .)
+    OR              reduce using rule 23 (propositional -> TRUE .)
+    AND             reduce using rule 23 (propositional -> TRUE .)
+    BOXRSEPARATOR   reduce using rule 23 (propositional -> TRUE .)
+    UNION           reduce using rule 23 (propositional -> TRUE .)
+    SEQ             reduce using rule 23 (propositional -> TRUE .)
+    STAR            reduce using rule 23 (propositional -> TRUE .)
+    DIAMONDRSEPARATOR reduce using rule 23 (propositional -> TRUE .)
+    RPAREN          reduce using rule 23 (propositional -> TRUE .)
+
+
+state 21
+
+    (24) propositional -> ATOM .
+
+    EQUIVALENCE     reduce using rule 24 (propositional -> ATOM .)
+    IMPLIES         reduce using rule 24 (propositional -> ATOM .)
+    OR              reduce using rule 24 (propositional -> ATOM .)
+    AND             reduce using rule 24 (propositional -> ATOM .)
+    BOXRSEPARATOR   reduce using rule 24 (propositional -> ATOM .)
+    UNION           reduce using rule 24 (propositional -> ATOM .)
+    SEQ             reduce using rule 24 (propositional -> ATOM .)
+    STAR            reduce using rule 24 (propositional -> ATOM .)
+    DIAMONDRSEPARATOR reduce using rule 24 (propositional -> ATOM .)
+    RPAREN          reduce using rule 24 (propositional -> ATOM .)
+
+
+state 22
+
+    (6) temp_formula -> DIAMONDLSEPARATOR path . DIAMONDRSEPARATOR temp_formula
+    (12) path -> path . UNION path
+    (13) path -> path . SEQ path
+    (14) path -> path . STAR
+
+    DIAMONDRSEPARATOR shift and go to state 43
+    UNION           shift and go to state 30
+    SEQ             shift and go to state 31
+    STAR            shift and go to state 32
+
+
+state 23
+
+    (7) temp_formula -> NOT temp_formula .
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    EQUIVALENCE     reduce using rule 7 (temp_formula -> NOT temp_formula .)
+    IMPLIES         reduce using rule 7 (temp_formula -> NOT temp_formula .)
+    OR              reduce using rule 7 (temp_formula -> NOT temp_formula .)
+    AND             reduce using rule 7 (temp_formula -> NOT temp_formula .)
+    $end            reduce using rule 7 (temp_formula -> NOT temp_formula .)
+    TEST            reduce using rule 7 (temp_formula -> NOT temp_formula .)
+    RPAREN          reduce using rule 7 (temp_formula -> NOT temp_formula .)
+
+  ! EQUIVALENCE     [ shift and go to state 10 ]
+  ! IMPLIES         [ shift and go to state 11 ]
+  ! OR              [ shift and go to state 12 ]
+  ! AND             [ shift and go to state 13 ]
+
+
+state 24
+
+    (25) temp_formula -> LPAREN temp_formula . RPAREN
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    RPAREN          shift and go to state 44
+    EQUIVALENCE     shift and go to state 10
+    IMPLIES         shift and go to state 11
+    OR              shift and go to state 12
+    AND             shift and go to state 13
+
+
+state 25
+
+    (1) temp_formula -> temp_formula EQUIVALENCE temp_formula .
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    EQUIVALENCE     reduce using rule 1 (temp_formula -> temp_formula EQUIVALENCE temp_formula .)
+    $end            reduce using rule 1 (temp_formula -> temp_formula EQUIVALENCE temp_formula .)
+    TEST            reduce using rule 1 (temp_formula -> temp_formula EQUIVALENCE temp_formula .)
+    RPAREN          reduce using rule 1 (temp_formula -> temp_formula EQUIVALENCE temp_formula .)
+    IMPLIES         shift and go to state 11
+    OR              shift and go to state 12
+    AND             shift and go to state 13
+
+  ! IMPLIES         [ reduce using rule 1 (temp_formula -> temp_formula EQUIVALENCE temp_formula .) ]
+  ! OR              [ reduce using rule 1 (temp_formula -> temp_formula EQUIVALENCE temp_formula .) ]
+  ! AND             [ reduce using rule 1 (temp_formula -> temp_formula EQUIVALENCE temp_formula .) ]
+  ! EQUIVALENCE     [ shift and go to state 10 ]
+
+
+state 26
+
+    (2) temp_formula -> temp_formula IMPLIES temp_formula .
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    EQUIVALENCE     reduce using rule 2 (temp_formula -> temp_formula IMPLIES temp_formula .)
+    IMPLIES         reduce using rule 2 (temp_formula -> temp_formula IMPLIES temp_formula .)
+    $end            reduce using rule 2 (temp_formula -> temp_formula IMPLIES temp_formula .)
+    TEST            reduce using rule 2 (temp_formula -> temp_formula IMPLIES temp_formula .)
+    RPAREN          reduce using rule 2 (temp_formula -> temp_formula IMPLIES temp_formula .)
+    OR              shift and go to state 12
+    AND             shift and go to state 13
+
+  ! OR              [ reduce using rule 2 (temp_formula -> temp_formula IMPLIES temp_formula .) ]
+  ! AND             [ reduce using rule 2 (temp_formula -> temp_formula IMPLIES temp_formula .) ]
+  ! EQUIVALENCE     [ shift and go to state 10 ]
+  ! IMPLIES         [ shift and go to state 11 ]
+
+
+state 27
+
+    (3) temp_formula -> temp_formula OR temp_formula .
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    EQUIVALENCE     reduce using rule 3 (temp_formula -> temp_formula OR temp_formula .)
+    IMPLIES         reduce using rule 3 (temp_formula -> temp_formula OR temp_formula .)
+    OR              reduce using rule 3 (temp_formula -> temp_formula OR temp_formula .)
+    $end            reduce using rule 3 (temp_formula -> temp_formula OR temp_formula .)
+    TEST            reduce using rule 3 (temp_formula -> temp_formula OR temp_formula .)
+    RPAREN          reduce using rule 3 (temp_formula -> temp_formula OR temp_formula .)
+    AND             shift and go to state 13
+
+  ! AND             [ reduce using rule 3 (temp_formula -> temp_formula OR temp_formula .) ]
+  ! EQUIVALENCE     [ shift and go to state 10 ]
+  ! IMPLIES         [ shift and go to state 11 ]
+  ! OR              [ shift and go to state 12 ]
+
+
+state 28
+
+    (4) temp_formula -> temp_formula AND temp_formula .
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    EQUIVALENCE     reduce using rule 4 (temp_formula -> temp_formula AND temp_formula .)
+    IMPLIES         reduce using rule 4 (temp_formula -> temp_formula AND temp_formula .)
+    OR              reduce using rule 4 (temp_formula -> temp_formula AND temp_formula .)
+    AND             reduce using rule 4 (temp_formula -> temp_formula AND temp_formula .)
+    $end            reduce using rule 4 (temp_formula -> temp_formula AND temp_formula .)
+    TEST            reduce using rule 4 (temp_formula -> temp_formula AND temp_formula .)
+    RPAREN          reduce using rule 4 (temp_formula -> temp_formula AND temp_formula .)
+
+  ! EQUIVALENCE     [ shift and go to state 10 ]
+  ! IMPLIES         [ shift and go to state 11 ]
+  ! OR              [ shift and go to state 12 ]
+  ! AND             [ shift and go to state 13 ]
+
+
+state 29
+
+    (5) temp_formula -> BOXLSEPARATOR path BOXRSEPARATOR . temp_formula
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 4
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 9
+
+    temp_formula                   shift and go to state 45
+
+state 30
+
+    (12) path -> path UNION . path
+    (12) path -> . path UNION path
+    (13) path -> . path SEQ path
+    (14) path -> . path STAR
+    (15) path -> . temp_formula TEST
+    (16) path -> . propositional
+    (26) path -> . LPAREN path RPAREN
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    LPAREN          shift and go to state 17
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 18
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+
+    path                           shift and go to state 46
+    temp_formula                   shift and go to state 15
+    propositional                  shift and go to state 16
+
+state 31
+
+    (13) path -> path SEQ . path
+    (12) path -> . path UNION path
+    (13) path -> . path SEQ path
+    (14) path -> . path STAR
+    (15) path -> . temp_formula TEST
+    (16) path -> . propositional
+    (26) path -> . LPAREN path RPAREN
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    LPAREN          shift and go to state 17
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 18
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+
+    path                           shift and go to state 47
+    temp_formula                   shift and go to state 15
+    propositional                  shift and go to state 16
+
+state 32
+
+    (14) path -> path STAR .
+
+    BOXRSEPARATOR   reduce using rule 14 (path -> path STAR .)
+    UNION           reduce using rule 14 (path -> path STAR .)
+    SEQ             reduce using rule 14 (path -> path STAR .)
+    STAR            reduce using rule 14 (path -> path STAR .)
+    DIAMONDRSEPARATOR reduce using rule 14 (path -> path STAR .)
+    RPAREN          reduce using rule 14 (path -> path STAR .)
+
+
+state 33
+
+    (15) path -> temp_formula TEST .
+
+    BOXRSEPARATOR   reduce using rule 15 (path -> temp_formula TEST .)
+    UNION           reduce using rule 15 (path -> temp_formula TEST .)
+    SEQ             reduce using rule 15 (path -> temp_formula TEST .)
+    STAR            reduce using rule 15 (path -> temp_formula TEST .)
+    DIAMONDRSEPARATOR reduce using rule 15 (path -> temp_formula TEST .)
+    RPAREN          reduce using rule 15 (path -> temp_formula TEST .)
+
+
+state 34
+
+    (17) propositional -> propositional EQUIVALENCE . propositional
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    NOT             shift and go to state 49
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+    LPAREN          shift and go to state 50
+
+    propositional                  shift and go to state 48
+
+state 35
+
+    (18) propositional -> propositional IMPLIES . propositional
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    NOT             shift and go to state 49
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+    LPAREN          shift and go to state 50
+
+    propositional                  shift and go to state 51
+
+state 36
+
+    (19) propositional -> propositional OR . propositional
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    NOT             shift and go to state 49
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+    LPAREN          shift and go to state 50
+
+    propositional                  shift and go to state 52
+
+state 37
+
+    (20) propositional -> propositional AND . propositional
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    NOT             shift and go to state 49
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+    LPAREN          shift and go to state 50
+
+    propositional                  shift and go to state 53
+
+state 38
+
+    (26) path -> LPAREN path . RPAREN
+    (12) path -> path . UNION path
+    (13) path -> path . SEQ path
+    (14) path -> path . STAR
+
+    RPAREN          shift and go to state 54
+    UNION           shift and go to state 30
+    SEQ             shift and go to state 31
+    STAR            shift and go to state 32
+
+
+state 39
+
+    (25) temp_formula -> LPAREN temp_formula . RPAREN
+    (15) path -> temp_formula . TEST
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    RPAREN          shift and go to state 44
+    TEST            shift and go to state 33
+    EQUIVALENCE     shift and go to state 10
+    IMPLIES         shift and go to state 11
+    OR              shift and go to state 12
+    AND             shift and go to state 13
+
+
+state 40
+
+    (27) propositional -> LPAREN propositional . RPAREN
+    (16) path -> propositional .
+    (17) propositional -> propositional . EQUIVALENCE propositional
+    (18) propositional -> propositional . IMPLIES propositional
+    (19) propositional -> propositional . OR propositional
+    (20) propositional -> propositional . AND propositional
+
+  ! shift/reduce conflict for RPAREN resolved as shift
+    RPAREN          shift and go to state 55
+    UNION           reduce using rule 16 (path -> propositional .)
+    SEQ             reduce using rule 16 (path -> propositional .)
+    STAR            reduce using rule 16 (path -> propositional .)
+    EQUIVALENCE     shift and go to state 34
+    IMPLIES         shift and go to state 35
+    OR              shift and go to state 36
+    AND             shift and go to state 37
+
+  ! RPAREN          [ reduce using rule 16 (path -> propositional .) ]
+
+
+state 41
+
+    (21) propositional -> NOT propositional .
+    (17) propositional -> propositional . EQUIVALENCE propositional
+    (18) propositional -> propositional . IMPLIES propositional
+    (19) propositional -> propositional . OR propositional
+    (20) propositional -> propositional . AND propositional
+
+    EQUIVALENCE     reduce using rule 21 (propositional -> NOT propositional .)
+    IMPLIES         reduce using rule 21 (propositional -> NOT propositional .)
+    OR              reduce using rule 21 (propositional -> NOT propositional .)
+    AND             reduce using rule 21 (propositional -> NOT propositional .)
+    BOXRSEPARATOR   reduce using rule 21 (propositional -> NOT propositional .)
+    UNION           reduce using rule 21 (propositional -> NOT propositional .)
+    SEQ             reduce using rule 21 (propositional -> NOT propositional .)
+    STAR            reduce using rule 21 (propositional -> NOT propositional .)
+    DIAMONDRSEPARATOR reduce using rule 21 (propositional -> NOT propositional .)
+    RPAREN          reduce using rule 21 (propositional -> NOT propositional .)
+
+  ! EQUIVALENCE     [ shift and go to state 34 ]
+  ! IMPLIES         [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+  ! AND             [ shift and go to state 37 ]
+
+
+state 42
+
+    (25) temp_formula -> LPAREN . temp_formula RPAREN
+    (27) propositional -> LPAREN . propositional RPAREN
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 18
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 42
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+
+    temp_formula                   shift and go to state 24
+    propositional                  shift and go to state 56
+
+state 43
+
+    (6) temp_formula -> DIAMONDLSEPARATOR path DIAMONDRSEPARATOR . temp_formula
+    (1) temp_formula -> . temp_formula EQUIVALENCE temp_formula
+    (2) temp_formula -> . temp_formula IMPLIES temp_formula
+    (3) temp_formula -> . temp_formula OR temp_formula
+    (4) temp_formula -> . temp_formula AND temp_formula
+    (5) temp_formula -> . BOXLSEPARATOR path BOXRSEPARATOR temp_formula
+    (6) temp_formula -> . DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula
+    (7) temp_formula -> . NOT temp_formula
+    (8) temp_formula -> . TT
+    (9) temp_formula -> . FF
+    (10) temp_formula -> . END
+    (11) temp_formula -> . LAST
+    (25) temp_formula -> . LPAREN temp_formula RPAREN
+
+    BOXLSEPARATOR   shift and go to state 2
+    DIAMONDLSEPARATOR shift and go to state 3
+    NOT             shift and go to state 4
+    TT              shift and go to state 5
+    FF              shift and go to state 6
+    END             shift and go to state 7
+    LAST            shift and go to state 8
+    LPAREN          shift and go to state 9
+
+    temp_formula                   shift and go to state 57
+
+state 44
+
+    (25) temp_formula -> LPAREN temp_formula RPAREN .
+
+    EQUIVALENCE     reduce using rule 25 (temp_formula -> LPAREN temp_formula RPAREN .)
+    IMPLIES         reduce using rule 25 (temp_formula -> LPAREN temp_formula RPAREN .)
+    OR              reduce using rule 25 (temp_formula -> LPAREN temp_formula RPAREN .)
+    AND             reduce using rule 25 (temp_formula -> LPAREN temp_formula RPAREN .)
+    $end            reduce using rule 25 (temp_formula -> LPAREN temp_formula RPAREN .)
+    TEST            reduce using rule 25 (temp_formula -> LPAREN temp_formula RPAREN .)
+    RPAREN          reduce using rule 25 (temp_formula -> LPAREN temp_formula RPAREN .)
+
+
+state 45
+
+    (5) temp_formula -> BOXLSEPARATOR path BOXRSEPARATOR temp_formula .
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    EQUIVALENCE     reduce using rule 5 (temp_formula -> BOXLSEPARATOR path BOXRSEPARATOR temp_formula .)
+    IMPLIES         reduce using rule 5 (temp_formula -> BOXLSEPARATOR path BOXRSEPARATOR temp_formula .)
+    OR              reduce using rule 5 (temp_formula -> BOXLSEPARATOR path BOXRSEPARATOR temp_formula .)
+    AND             reduce using rule 5 (temp_formula -> BOXLSEPARATOR path BOXRSEPARATOR temp_formula .)
+    $end            reduce using rule 5 (temp_formula -> BOXLSEPARATOR path BOXRSEPARATOR temp_formula .)
+    TEST            reduce using rule 5 (temp_formula -> BOXLSEPARATOR path BOXRSEPARATOR temp_formula .)
+    RPAREN          reduce using rule 5 (temp_formula -> BOXLSEPARATOR path BOXRSEPARATOR temp_formula .)
+
+  ! EQUIVALENCE     [ shift and go to state 10 ]
+  ! IMPLIES         [ shift and go to state 11 ]
+  ! OR              [ shift and go to state 12 ]
+  ! AND             [ shift and go to state 13 ]
+
+
+state 46
+
+    (12) path -> path UNION path .
+    (12) path -> path . UNION path
+    (13) path -> path . SEQ path
+    (14) path -> path . STAR
+
+    BOXRSEPARATOR   reduce using rule 12 (path -> path UNION path .)
+    UNION           reduce using rule 12 (path -> path UNION path .)
+    DIAMONDRSEPARATOR reduce using rule 12 (path -> path UNION path .)
+    RPAREN          reduce using rule 12 (path -> path UNION path .)
+    SEQ             shift and go to state 31
+    STAR            shift and go to state 32
+
+  ! SEQ             [ reduce using rule 12 (path -> path UNION path .) ]
+  ! STAR            [ reduce using rule 12 (path -> path UNION path .) ]
+  ! UNION           [ shift and go to state 30 ]
+
+
+state 47
+
+    (13) path -> path SEQ path .
+    (12) path -> path . UNION path
+    (13) path -> path . SEQ path
+    (14) path -> path . STAR
+
+    BOXRSEPARATOR   reduce using rule 13 (path -> path SEQ path .)
+    UNION           reduce using rule 13 (path -> path SEQ path .)
+    SEQ             reduce using rule 13 (path -> path SEQ path .)
+    DIAMONDRSEPARATOR reduce using rule 13 (path -> path SEQ path .)
+    RPAREN          reduce using rule 13 (path -> path SEQ path .)
+    STAR            shift and go to state 32
+
+  ! STAR            [ reduce using rule 13 (path -> path SEQ path .) ]
+  ! UNION           [ shift and go to state 30 ]
+  ! SEQ             [ shift and go to state 31 ]
+
+
+state 48
+
+    (17) propositional -> propositional EQUIVALENCE propositional .
+    (17) propositional -> propositional . EQUIVALENCE propositional
+    (18) propositional -> propositional . IMPLIES propositional
+    (19) propositional -> propositional . OR propositional
+    (20) propositional -> propositional . AND propositional
+
+    EQUIVALENCE     reduce using rule 17 (propositional -> propositional EQUIVALENCE propositional .)
+    BOXRSEPARATOR   reduce using rule 17 (propositional -> propositional EQUIVALENCE propositional .)
+    UNION           reduce using rule 17 (propositional -> propositional EQUIVALENCE propositional .)
+    SEQ             reduce using rule 17 (propositional -> propositional EQUIVALENCE propositional .)
+    STAR            reduce using rule 17 (propositional -> propositional EQUIVALENCE propositional .)
+    DIAMONDRSEPARATOR reduce using rule 17 (propositional -> propositional EQUIVALENCE propositional .)
+    RPAREN          reduce using rule 17 (propositional -> propositional EQUIVALENCE propositional .)
+    IMPLIES         shift and go to state 35
+    OR              shift and go to state 36
+    AND             shift and go to state 37
+
+  ! IMPLIES         [ reduce using rule 17 (propositional -> propositional EQUIVALENCE propositional .) ]
+  ! OR              [ reduce using rule 17 (propositional -> propositional EQUIVALENCE propositional .) ]
+  ! AND             [ reduce using rule 17 (propositional -> propositional EQUIVALENCE propositional .) ]
+  ! EQUIVALENCE     [ shift and go to state 34 ]
+
+
+state 49
+
+    (21) propositional -> NOT . propositional
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    NOT             shift and go to state 49
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+    LPAREN          shift and go to state 50
+
+    propositional                  shift and go to state 41
+
+state 50
+
+    (27) propositional -> LPAREN . propositional RPAREN
+    (17) propositional -> . propositional EQUIVALENCE propositional
+    (18) propositional -> . propositional IMPLIES propositional
+    (19) propositional -> . propositional OR propositional
+    (20) propositional -> . propositional AND propositional
+    (21) propositional -> . NOT propositional
+    (22) propositional -> . FALSE
+    (23) propositional -> . TRUE
+    (24) propositional -> . ATOM
+    (27) propositional -> . LPAREN propositional RPAREN
+
+    NOT             shift and go to state 49
+    FALSE           shift and go to state 19
+    TRUE            shift and go to state 20
+    ATOM            shift and go to state 21
+    LPAREN          shift and go to state 50
+
+    propositional                  shift and go to state 56
+
+state 51
+
+    (18) propositional -> propositional IMPLIES propositional .
+    (17) propositional -> propositional . EQUIVALENCE propositional
+    (18) propositional -> propositional . IMPLIES propositional
+    (19) propositional -> propositional . OR propositional
+    (20) propositional -> propositional . AND propositional
+
+    EQUIVALENCE     reduce using rule 18 (propositional -> propositional IMPLIES propositional .)
+    IMPLIES         reduce using rule 18 (propositional -> propositional IMPLIES propositional .)
+    BOXRSEPARATOR   reduce using rule 18 (propositional -> propositional IMPLIES propositional .)
+    UNION           reduce using rule 18 (propositional -> propositional IMPLIES propositional .)
+    SEQ             reduce using rule 18 (propositional -> propositional IMPLIES propositional .)
+    STAR            reduce using rule 18 (propositional -> propositional IMPLIES propositional .)
+    DIAMONDRSEPARATOR reduce using rule 18 (propositional -> propositional IMPLIES propositional .)
+    RPAREN          reduce using rule 18 (propositional -> propositional IMPLIES propositional .)
+    OR              shift and go to state 36
+    AND             shift and go to state 37
+
+  ! OR              [ reduce using rule 18 (propositional -> propositional IMPLIES propositional .) ]
+  ! AND             [ reduce using rule 18 (propositional -> propositional IMPLIES propositional .) ]
+  ! EQUIVALENCE     [ shift and go to state 34 ]
+  ! IMPLIES         [ shift and go to state 35 ]
+
+
+state 52
+
+    (19) propositional -> propositional OR propositional .
+    (17) propositional -> propositional . EQUIVALENCE propositional
+    (18) propositional -> propositional . IMPLIES propositional
+    (19) propositional -> propositional . OR propositional
+    (20) propositional -> propositional . AND propositional
+
+    EQUIVALENCE     reduce using rule 19 (propositional -> propositional OR propositional .)
+    IMPLIES         reduce using rule 19 (propositional -> propositional OR propositional .)
+    OR              reduce using rule 19 (propositional -> propositional OR propositional .)
+    BOXRSEPARATOR   reduce using rule 19 (propositional -> propositional OR propositional .)
+    UNION           reduce using rule 19 (propositional -> propositional OR propositional .)
+    SEQ             reduce using rule 19 (propositional -> propositional OR propositional .)
+    STAR            reduce using rule 19 (propositional -> propositional OR propositional .)
+    DIAMONDRSEPARATOR reduce using rule 19 (propositional -> propositional OR propositional .)
+    RPAREN          reduce using rule 19 (propositional -> propositional OR propositional .)
+    AND             shift and go to state 37
+
+  ! AND             [ reduce using rule 19 (propositional -> propositional OR propositional .) ]
+  ! EQUIVALENCE     [ shift and go to state 34 ]
+  ! IMPLIES         [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+
+
+state 53
+
+    (20) propositional -> propositional AND propositional .
+    (17) propositional -> propositional . EQUIVALENCE propositional
+    (18) propositional -> propositional . IMPLIES propositional
+    (19) propositional -> propositional . OR propositional
+    (20) propositional -> propositional . AND propositional
+
+    EQUIVALENCE     reduce using rule 20 (propositional -> propositional AND propositional .)
+    IMPLIES         reduce using rule 20 (propositional -> propositional AND propositional .)
+    OR              reduce using rule 20 (propositional -> propositional AND propositional .)
+    AND             reduce using rule 20 (propositional -> propositional AND propositional .)
+    BOXRSEPARATOR   reduce using rule 20 (propositional -> propositional AND propositional .)
+    UNION           reduce using rule 20 (propositional -> propositional AND propositional .)
+    SEQ             reduce using rule 20 (propositional -> propositional AND propositional .)
+    STAR            reduce using rule 20 (propositional -> propositional AND propositional .)
+    DIAMONDRSEPARATOR reduce using rule 20 (propositional -> propositional AND propositional .)
+    RPAREN          reduce using rule 20 (propositional -> propositional AND propositional .)
+
+  ! EQUIVALENCE     [ shift and go to state 34 ]
+  ! IMPLIES         [ shift and go to state 35 ]
+  ! OR              [ shift and go to state 36 ]
+  ! AND             [ shift and go to state 37 ]
+
+
+state 54
+
+    (26) path -> LPAREN path RPAREN .
+
+    BOXRSEPARATOR   reduce using rule 26 (path -> LPAREN path RPAREN .)
+    UNION           reduce using rule 26 (path -> LPAREN path RPAREN .)
+    SEQ             reduce using rule 26 (path -> LPAREN path RPAREN .)
+    STAR            reduce using rule 26 (path -> LPAREN path RPAREN .)
+    DIAMONDRSEPARATOR reduce using rule 26 (path -> LPAREN path RPAREN .)
+    RPAREN          reduce using rule 26 (path -> LPAREN path RPAREN .)
+
+
+state 55
+
+    (27) propositional -> LPAREN propositional RPAREN .
+
+    EQUIVALENCE     reduce using rule 27 (propositional -> LPAREN propositional RPAREN .)
+    IMPLIES         reduce using rule 27 (propositional -> LPAREN propositional RPAREN .)
+    OR              reduce using rule 27 (propositional -> LPAREN propositional RPAREN .)
+    AND             reduce using rule 27 (propositional -> LPAREN propositional RPAREN .)
+    BOXRSEPARATOR   reduce using rule 27 (propositional -> LPAREN propositional RPAREN .)
+    UNION           reduce using rule 27 (propositional -> LPAREN propositional RPAREN .)
+    SEQ             reduce using rule 27 (propositional -> LPAREN propositional RPAREN .)
+    STAR            reduce using rule 27 (propositional -> LPAREN propositional RPAREN .)
+    DIAMONDRSEPARATOR reduce using rule 27 (propositional -> LPAREN propositional RPAREN .)
+    RPAREN          reduce using rule 27 (propositional -> LPAREN propositional RPAREN .)
+
+
+state 56
+
+    (27) propositional -> LPAREN propositional . RPAREN
+    (17) propositional -> propositional . EQUIVALENCE propositional
+    (18) propositional -> propositional . IMPLIES propositional
+    (19) propositional -> propositional . OR propositional
+    (20) propositional -> propositional . AND propositional
+
+    RPAREN          shift and go to state 55
+    EQUIVALENCE     shift and go to state 34
+    IMPLIES         shift and go to state 35
+    OR              shift and go to state 36
+    AND             shift and go to state 37
+
+
+state 57
+
+    (6) temp_formula -> DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula .
+    (1) temp_formula -> temp_formula . EQUIVALENCE temp_formula
+    (2) temp_formula -> temp_formula . IMPLIES temp_formula
+    (3) temp_formula -> temp_formula . OR temp_formula
+    (4) temp_formula -> temp_formula . AND temp_formula
+
+    EQUIVALENCE     reduce using rule 6 (temp_formula -> DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula .)
+    IMPLIES         reduce using rule 6 (temp_formula -> DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula .)
+    OR              reduce using rule 6 (temp_formula -> DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula .)
+    AND             reduce using rule 6 (temp_formula -> DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula .)
+    $end            reduce using rule 6 (temp_formula -> DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula .)
+    TEST            reduce using rule 6 (temp_formula -> DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula .)
+    RPAREN          reduce using rule 6 (temp_formula -> DIAMONDLSEPARATOR path DIAMONDRSEPARATOR temp_formula .)
+
+  ! EQUIVALENCE     [ shift and go to state 10 ]
+  ! IMPLIES         [ shift and go to state 11 ]
+  ! OR              [ shift and go to state 12 ]
+  ! AND             [ shift and go to state 13 ]
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for RPAREN in state 40 resolved as shift
