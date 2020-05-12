@@ -5,10 +5,11 @@ Università La Sapienza Roma
 <a href="https://www.dis.uniroma1.it/"><img src="http://www.dis.uniroma1.it/sites/default/files/marchio%20logo%20eng%20jpg.jpg" width="500"></a>
 
 ## Approach
-Work in progress ----->
-ENV: chessboard ------>
-RL: learn new moves ----->
-RB: ???
+Work in progress 
+
+ENV: chessboard: 5 colors ('green','blue','purple','black','grey'), 4 visits for each color
+RL: learn the chess moves: Knight, King, Rock, Bishop, Queen
+Restraining Bolts specification: perform moves in the specified order (NB: order for the subject, i.e. first the Knight, then the King ...) (NB: each move is not random, i.e. start from 1,1 then goes to 1,2 ...)
 
 
 ## Team
