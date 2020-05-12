@@ -27,4 +27,8 @@ You can read our final technical documentation about this project here (report t
 
 
 ## Training
-$ python train.py chess 
+$ python game.py Chess4 Sarsa new_trainfile
+
+## Plot the results
+$ python plotresults.py -datafiles data/new_training
+
