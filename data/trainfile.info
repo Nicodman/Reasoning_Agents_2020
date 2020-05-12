@@ -1,0 +1,13 @@
+Date:    2020-05-12 14:16:54
+Train:   S4_S_g099_n20_101
+Game:    Sapientino4
+Size:    5 x 7
+Agent:   Sarsa
+gamma:   0.990000
+epsilon: -2.000000
+alpha:   -1.000000
+n-step:  20
+lambda:  -1.000000
+
+
+2020-05-12 14:16:54,S4_S_g099_n20_101,Sapientino4,5,7,Sarsa,0.990,-2.000,-1.000,20,-1.000

@@ -1,0 +1,26 @@
+Date:    2020-05-12 14:24:44
+Train:   training
+Game:    Sapientino4
+Size:    5 x 7
+Agent:   Sarsa
+gamma:   1.000000
+epsilon: -1.000000
+alpha:   -1.000000
+n-step:  1
+lambda:  -1.000000
+
+
+2020-05-12 14:24:44,training,Sapientino4,5,7,Sarsa,1.000,-1.000,-1.000,1,-1.000
+iteration:        5570
+goal score:       20
+goal reward:      22000.00
+goal n. actions:  64
+highest reward:   22000.00
+highest score:    20
+elapsed time:     248
+Optimal policy found.
+
+training   5500/ 229 avg last 100: r: 3302.00 | score 3.61 | p goals 0.0 %
+
+2020-05-12 14:28:52,training,Sapientino4,5,7,Sarsa,1.000,-1.000,-1.000,1,-1.000,5570,20,22000.00,64,22000.00,20,248
+
