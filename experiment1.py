@@ -40,84 +40,14 @@ lambdae = -1
 alpha = -1
 niter = -1
 stopongoal = False
+       
+
         
-# Sapientino 2
-
-
-nstep = 20
-
-#maxtime = 120
-
-#doExperiment('Sapientino','2',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 2, 3) 
-#doExperiment('Sapientino','2C',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 4, 5) 
-
-maxtime = 2400
-
-#doExperiment('Sapientino','2D',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 2, 3)
-#doExperiment('Sapientino','2DC',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 6, 7) 
-
-#doExperiment('Sapientino','2',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 2, 3) 
-
-#doExperiment('Sapientino','2C',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 1, 3) 
-
-#doExperiment('Sapientino','2D',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 2, 3) 
-
-#doExperiment('Sapientino','2DC',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 1, 3) 
-
-
-# Sapientino 3
-
-
+# Chess
 nstep = 20
 
 maxtime = 200
+doExperiment('Chess','4',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, [101,102,103]) 
 
-# normal
-doExperiment('Sapientino','4',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, [101,102,103]) 
-
-# with options
-#doExperiment('Sapientino','3O',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, [101, 102, 103]) 
-
-
-#nstep = 20
-
-#maxtime = 600
-
-# differential
-#doExperiment('Sapientino','3D',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, [101,102,103]) 
-
-# differential with options
-#doExperiment('Sapientino','3DO',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, [101,102,103]) 
-
-
-
-
-
-#doExperiment('Sapientino','3Dx',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 1, 3) 
-#doExperiment('Sapientino','3DR',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 1, 3) 
-#doExperiment('Sapientino','3DxR',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 1, 3) 
-
-#while maxtime<=1200:
-#    doExperiment('Sapientino','3Dr',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 4, 6) 
-#    doExperiment('Sapientino','3Dxr',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 4, 6) 
-#    maxtime += 300
-
-
-#doExperiment('Sapientino','3DC',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 1, 1) 
-
-
-#maxtime = 1200
-
-#doExperiment('Sapientino','3D',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 2, 3) 
-#doExperiment('Sapientino','3DC',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 1, 1) 
-
-
-#doExperiment('Sapientino','3D',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 1, 1) 
-#doExperiment('Sapientino','3DC',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 1, 1) 
-
-
-
-#doExperiment('Sapientino','3D',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 4, 4) 
-#doExperiment('Sapientino','3DC',agent, gamma, epsilon, lambdae, alpha, nstep, niter, maxtime, stopongoal, 1, 1) 
 
 

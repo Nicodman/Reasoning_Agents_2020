@@ -19,51 +19,12 @@ args = None
 game = None
 agent = None
 
-
+#chess learning moves: 4 visit per each color
 GAMES = {
 
-    'Sapientino4':   [ "importlib.import_module('Sapientino').Sapientino", 
+    'Chess4':   [ "importlib.import_module('Chess').Chess", 
                        "game.nvisitpercol=4" ],  
 
-
-    
-    'Sapientino2':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=2" ],  
-    'Sapientino2D':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=2\ngame.differential = True\n" ],  
-    'Sapientino2C':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=2\ngame.colorsensor = True\n" ],  
-    'Sapientino2DC':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=2\ngame.differential = True\ngame.colorsensor = True\n" ],  
-    'Sapientino2X':   [ "importlib.import_module('Sapientino').SapientinoExt", 
-                       "game.nvisitpercol=2" ],  
-
-    'Sapientino3':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=3" ],  
-    'Sapientino3D':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=3\ngame.differential = True\n" ],  
-    'Sapientino3DO':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=3\ngame.differential = True\ngame.RA_exploration_enabled = True\n" ],  
-
-
-    'Sapientino3C':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=3\ngame.colorsensor = True\n" ],  
-    'Sapientino3DC':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=3\ngame.differential = True\ngame.colorsensor = True\n" ],  
-    'Sapientino3O':   [ "importlib.import_module('Sapientino').Sapientino", 
-                        "game.nvisitpercol=3\ngame.RA_exploration_enabled = True" ],  
-    'Sapientino3X':   [ "importlib.import_module('Sapientino').SapientinoExt", 
-                       "game.nvisitpercol=3" ],  
-    'Sapientino3DR':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=3\ngame.differential = True\ngame.RA.reward_shaping_enabled = True" ],  
-    'Sapientino3Dr':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=3\ngame.differential = True\ngame.reward_shaping_enabled = True" ],  
-    'Sapientino3Dx':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=3\ngame.differential = True\ngame.RA_exploration_enabled = True" ],  
-    'Sapientino3Dxr':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=3\ngame.differential = True\ngame.RA_exploration_enabled = True\ngame.reward_shaping_enabled = True" ],  
-    'Sapientino3DxR':   [ "importlib.import_module('Sapientino').Sapientino", 
-                       "game.nvisitpercol=3\ngame.differential = True\ngame.RA_exploration_enabled = True\ngame.RA.reward_shaping_enabled = True" ]
 
 }
 
@@ -73,7 +34,7 @@ def loadGameModule():
     print("Loading game %s" %args.game)
     try:
         # default sizes
-        if 'Sapientino' in args.game:
+        if 'Chess' in args.game:
             args.rows = 5 
             args.cols = 7
         
