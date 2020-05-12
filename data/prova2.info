@@ -1,0 +1,25 @@
+Date:    2020-05-12 09:14:29
+Train:   prova2
+Game:    Sapientino4
+Size:    5 x 7
+Agent:   Sarsa
+gamma:   1.000000
+epsilon: -1.000000
+alpha:   -1.000000
+n-step:  1
+lambda:  -1.000000
+
+
+2020-05-12 09:14:29,prova2,Sapientino4,5,7,Sarsa,1.000,-1.000,-1.000,1,-1.000
+iteration:        127
+goal score:       0
+goal reward:      -10.00
+goal n. actions:  351
+highest reward:   590.00
+highest score:    3
+elapsed time:     9
+
+prova2    100/   6 avg last 100: r: 92.00 | score 0.76 | p goals 0.0 %
+
+2020-05-12 09:14:39,prova2,Sapientino4,5,7,Sarsa,1.000,-1.000,-1.000,1,-1.000,127,0,-10.00,351,590.00,3,9
+
