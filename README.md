@@ -32,3 +32,6 @@ $ python game.py Chess4 Sarsa new_trainfile
 ## Plot the results
 $ python plotresults.py -datafiles data/new_training
 
+## Reference
+RL_GAMES, Iocchi,De giacomo, Patrizi, Università La Sapienza Roma
+https://sites.google.com/diag.uniroma1.it/restraining-bolt
