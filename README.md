@@ -9,8 +9,11 @@ Reasoning Agents project: Reinforcement Learning and Restraining Bolts
 
 ENV: chessboard: 5 colors ('green','blue','purple','black','grey'), 4 visits for each color
 
-RL: learn the chess moves: Knight, King, Rock, Bishop, Queen. __
-RB specification: perform moves in the specified order (NB: order for the subject, i.e. first the Knight, then the King ...) (NB: each move is not random, i.e. start from 1,1 then goes to 1,2 ...)
+RL: learn the chess moves: Knight, King, Rock, Bishop, Queen with SARSA learning algorithm
+
+RB specification: perform moves in the specified order (NB: order for the subject, i.e. first the Knight, then the King ...) (NB: each move is not random, i.e. start from 1,1 then goes to 1,2 ... the Knight moves from the bottom to the top...)
+
+Experiment 2: Pick And Place Robot (future work)
 
 
 ## Team
