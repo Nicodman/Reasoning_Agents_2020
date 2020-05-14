@@ -7,7 +7,7 @@ Università La Sapienza Roma
 ## Approach
 Reasoning Agents project: Reinforcement Learning and Restraining Bolts
 
-ENV: chessboard: 5 colors ('green','blue','purple','black','grey'), 4 visits for each color. __
+ENV: chessboard: 5 colors ('green','blue','purple','black','grey'), 4 visits for each color.\\
 RL: learn the chess moves: Knight, King, Rock, Bishop, Queen. __
 RB specification: perform moves in the specified order (NB: order for the subject, i.e. first the Knight, then the King ...) (NB: each move is not random, i.e. start from 1,1 then goes to 1,2 ...)
 
