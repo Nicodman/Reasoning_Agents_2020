@@ -4,16 +4,21 @@ Università La Sapienza Roma
 
 <a href="https://www.dis.uniroma1.it/"><img src="http://www.dis.uniroma1.it/sites/default/files/marchio%20logo%20eng%20jpg.jpg" width="500"></a>
 
-## Approach
+## Approach 1
 Reasoning Agents project: Reinforcement Learning and Restraining Bolts with LTL specifications
 
-ENV: chessboard: 5 colors ('green','blue','purple','black','grey'), 4 visits for each color
+ENV: chessboard: 5 colors ('green','blue','purple','black','grey'), 4 visits for each color; grid 5x7.
 
 RL: learn the chess moves: Knight, King, Rock, Bishop, Queen with SARSA learning algorithm
 
 RB specification: perform moves in the specified order (NB: order for the subject, i.e. first the Knight, then the King ...) (NB: each move is not random, i.e. start from 1,1 then goes to 1,2 ... the Knight moves from the bottom to the top...)
 
-Experiment 2: Pick And Place Robot (future work)
+## Approach 2
+Pick And Place Robot (future work)
+
+The environment is completed, but there is only the link with RL part: the Linear Temporal Logic is only sketched (so the Restraining Bolts specifications are not implemented)
+
+RL + RB: the robot is fixed on yellow square: its end effector moves around the 3x3 grid, it must learn to take the current item from the green square each time and bring it on each red shelf, by following the order RB specification (not randomly)
 
 
 ## Team
