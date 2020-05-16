@@ -43,4 +43,6 @@ $ python plotresults.py -datafiles data/new_training
 
 ## Reference
 RL_GAMES, Iocchi,De giacomo, Patrizi, Università La Sapienza Roma
-https://sites.google.com/diag.uniroma1.it/restraining-bolt
+- https://sites.google.com/diag.uniroma1.it/restraining-bolt
+
+- https://aaai.org/Papers/AAAI/2020GB/SCT-De%20GiacomoG.703.pdf
