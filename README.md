@@ -31,7 +31,9 @@ RL + RB: the robot is fixed on yellow square: its end effector moves around the 
 
 
 ## Documentation
-You can see our final slide presentation about this project in Document
+You can see our final slide presentation about this project in Documents Folder
+
+Here there is also the main reference paper of our work.
 
 
 
