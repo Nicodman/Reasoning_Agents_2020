@@ -1,4 +1,4 @@
-# Restraining-Bolts-for-Reinforcement-Learning-using-Linear-Time-Logic
+# Restraining-Bolts-for-Reinforcement-Learning-using-Linear-Temporal-Logic
 AIRO project. Elective in Artificial Intelligence course: Reasoning Agents
 Università La Sapienza Roma
 
