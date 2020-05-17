@@ -50,4 +50,7 @@ Original Paper, Università La Sapienza Roma
 RL_GAMES: Iocchi,De giacomo, Patrizi, Università La Sapienza Roma
 - https://sites.google.com/diag.uniroma1.it/restraining-bolt
 
+## Video with best learned policy
 
+## Video
+![SC2 Video](video/clip_training.mov)
