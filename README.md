@@ -27,7 +27,7 @@ RL + RB: the robot is fixed on yellow square: its end effector moves around the 
 
 * Nicolò Mantovani <a href="https://github.com/Nicodman"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1024px-Octicons-mark-github.svg.png" width="30"></a>
 * Sara Tozzo
-* Giulia Piernoli
+* Giorgia Piernoli
 
 
 ## Documentation
