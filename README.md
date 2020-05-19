@@ -62,4 +62,4 @@ Non markovian Rewards expressed in LTL
 - https://www.cs.toronto.edu/~acamacho/papers/cam-che-san-mci-goalsrl18-poster.pdf
 
 ## Video with best learned policy
-![SC2 Video](video/clip_training.mov)
+![SC2 Video](video/clip_training.mov width="50")
