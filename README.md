@@ -19,7 +19,7 @@ RB specification: perform moves in the specified order (NB: order for the subjec
 We have only one agent that must learn and perform 5 different Chess Moves following a particular sequence. The chessboard is characterized by 5 colors, each one corresponding to one particular move; for each move only four squares are available and must not be random generations. For example the Knight move must move from the bottom to the top, by following the classic L letter.
 The goal of the game is to find the maximum score: 20 points.
 
-![SC2 Image](env.png width="50")
+The video of the experiment is shown below.
 
 ## Approach (Second Example) (abstract)
 Pick And Place Robot (future work)
@@ -62,4 +62,4 @@ Non markovian Rewards expressed in LTL
 - https://www.cs.toronto.edu/~acamacho/papers/cam-che-san-mci-goalsrl18-poster.pdf
 
 ## Video with best learned policy
-![SC2 Video](video/clip_training.mov width="5")
+![SC2 Video](video/clip_training.mov)
